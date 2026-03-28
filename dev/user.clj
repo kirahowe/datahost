@@ -2,24 +2,24 @@
   (:require [datahost.datasets]
             [datahost.handler]
             [datahost.server]
-            [integrant.core :as ig]
+            [datahost.sys :as sys]
             [integrant.repl :as ig-repl]
-            [integrant.repl.state :refer [system]]
-            [clojure.java.io :as io]))
+            [integrant.repl.state :refer [system]]))
 
-(defn read-config []
-  (-> (io/resource "config.edn")
-      slurp
-      (ig/read-string)))
+(ig-repl/set-prep! #(sys/load-config sys/config-paths))
 
-(ig-repl/set-prep! read-config)
-
-(def go   ig-repl/go)
-(def halt ig-repl/halt)
+(def go    ig-repl/go)
+(def halt  ig-repl/halt)
 (def reset ig-repl/reset)
+
+(defn server   [] (get system :datahost/server))
+(defn datasets [] (get system :datahost/datasets))
+(defn handler  [] (get system :datahost/handler))
 
 (comment
   (go)
   (halt)
   (reset)
-  system)
+  system
+  (server)
+  (datasets))
