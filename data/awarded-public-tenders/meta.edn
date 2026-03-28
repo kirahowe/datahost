@@ -1,0 +1,5 @@
+{:name        "Awarded Public Tenders"
+ :description "Awarded vendor and amount for government and public sector tenders in Nova Scotia, organized by entity, vendor, category, start date, end date, and awarded date."
+ :source      "https://data.novascotia.ca/Procurement-and-Contracts/Awarded-Public-Tenders/m6ps-8j6u"
+ :updated     "2025-12-27"
+ :tags        ["procurement" "tenders" "contracts" "public sector" "spending"]}

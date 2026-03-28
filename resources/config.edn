@@ -1,0 +1,6 @@
+{:datahost/datasets {:data-dir "data"}
+
+ :datahost/handler  {:datasets #ig/ref :datahost/datasets}
+
+ :datahost/server   {:handler #ig/ref :datahost/handler
+                     :port    3000}}

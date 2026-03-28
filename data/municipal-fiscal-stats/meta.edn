@@ -1,0 +1,5 @@
+{:name        "Municipal Fiscal Statistics"
+ :description "Consolidated revenues and expenses for Nova Scotia municipalities, including operating fund totals broken down by municipality and year."
+ :source      "https://data.novascotia.ca/Municipalities/Municipal-Fiscal-Statistics-Consolidated-Revenues-/shcq-4v93"
+ :updated     "2025-06-01"
+ :tags        ["municipalities" "fiscal" "revenues" "expenses" "local government" "spending"]}
