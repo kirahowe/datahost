@@ -1,11 +1,11 @@
 (ns datahost.server
   (:require [integrant.core :as ig]
-            [ring.adapter.jetty :as jetty]))
+            [org.httpkit.server :as http-kit]))
 
 (defmethod ig/init-key :datahost/server [_ {:keys [handler port]}]
   (let [port (if (string? port) (Integer/parseInt port) port)]
     (println (str "Starting server on port " port))
-    (jetty/run-jetty handler {:port port :join? false})))
+    (http-kit/run-server handler {:port port})))
 
-(defmethod ig/halt-key! :datahost/server [_ server]
-  (.stop server))
+(defmethod ig/halt-key! :datahost/server [_ stop-fn]
+  (stop-fn))
